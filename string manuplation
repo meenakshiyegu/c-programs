@@ -15,7 +15,7 @@ int main() {
     while(i<=strlen(a)){
         while(a[i]>=48 && a[i]<=57){
             ad=ad*po+(int)(a[i]-48);
-            po=po*10;
+            po=10;
             i+=1;
             flag=1;
         }
