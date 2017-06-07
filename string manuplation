@@ -55,3 +55,11 @@ int main() {
         printf("Undefined\n");
     }
 }
+/* 
+input
+box 1: 10 *20 box 2: 20 * 30 box 3: 30 *40 box 4: 20 *20
+20 *30
+output
+yes 2
+yes 3
+*/
