@@ -1,0 +1,50 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+int a[100],cnt=999,ans=-1;
+int count1(int f,int s){
+    int count=0,last=f;
+    while(1){
+        if(a[f]==last || a[f]==-1){
+            cnt=999;
+            break;
+        }
+        else if(a[f]==s){
+            if(cnt>count){
+                cnt=count;
+                ans=a[s];
+            }
+            break;
+        }
+        else{
+            count+=1;
+            f=a[f];
+        }
+    }
+    return ans;
+}
+int main(){
+    int n,f,s;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+    }
+    scanf("%d%d",&f,&s);
+    count1(f,s);
+    printf("%d ",count1(s,f));
+}
+
+/*Input
+23
+4 4 1 4 13 8 8 8 0 8 14 9 15 11 -1 10 15 22 22 22 22 22 21
+21 13
+Output
+-1
+Input
+23
+4 4 1 4 13 8 8 8 0 8 14 9 15 11 -1 10 15 22 22 22 22 22 21
+0 5
+Output
+4
+*/
