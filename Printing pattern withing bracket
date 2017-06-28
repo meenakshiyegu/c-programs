@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include<stdlib.h>
+#include<string.h>
+char c[100][100];
+int fn(int a[],int n,int size){
+    if(n==size){
+        return 0;
+    }
+    else{
+        printf("%s ",c[n]);
+        for (int j=0;j<a[n+1];j++)
+        fn(a,n+1,size);
+    }
+    return 1;
+}
+int main(void) {
+    char a[100];
+    scanf("%s",a);
+    int j=0,p=0,k=0,m=0,b[100],ans=0,pow=10;
+    int i=strlen(a);
+    while(j<i){
+        if(a[j]>=48 && a[j]<=57){
+            ans=ans*pow+(a[j]-48);
+            if(j+1<i)
+                j++;
+            else
+                break;
+        }
+        if(ans>0){
+            b[k]=ans;
+            ans=0;
+            k++;
+        }
+        while(a[j]>=97 && a[j]<=122){
+            c[p][m]=a[j];
+            m++;
+            if(j+1<i)
+                j++;
+            else
+                break;
+        }
+        if(m>0){
+            p++;
+            m=0;
+        }
+        else
+            j++;
+    }
+   for(int i=0;i<b[0]-1;i++)
+   fn(b,0,k);
+}
+
+INPUT
+3ab[2[ab3[cd4[ef]]]]
+
+OUTPUT
+ab ab cd ef ef ef ef cd ef ef ef ef cd ef ef ef ef ab cd ef ef ef ef cd ef ef ef ef cd ef ef ef ef ab ab cd ef ef ef ef cd ef ef ef ef cd ef ef ef ef ab cd ef ef ef ef cd ef ef ef ef cd ef ef ef ef 
