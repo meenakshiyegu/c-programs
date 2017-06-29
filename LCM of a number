@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main()
+{
+    int n1, j, n2, i, gcd=1, lcm;
+    scanf("%d %d",&n1,&n2);
+	if(n1<=n2)
+		i=n1;
+	else
+		i=n2;
+    for(j=i; j>0 ; j--)
+    {
+        if(n1%j==0 && n2%j==0){
+            gcd = j;
+            break;
+        }
+    }
+    lcm = (n1*n2)/gcd;
+    printf("The LCM is %d.", n1, n2, lcm);
+
+    return 0;
+}
+
+Input
+15 30
+ 
+ Output
+ The lcm is 30
